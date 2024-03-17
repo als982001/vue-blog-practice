@@ -1,6 +1,6 @@
 <template>
   <div v-for="(item, index) in blog" :key="index">
-    <h5>{{ item.title }}</h5>
+    <h5 @click="$router.push(`/detail/${item.number}`)">{{ item.title }}</h5>
     <span>{{ item.date }}</span>
   </div>
 </template>
@@ -10,6 +10,9 @@ export default {
   name: "ListComponent",
   props: {
     blog: Array,
+  },
+  mounted() {
+    console.log(this.blog);
   },
 };
 </script>
