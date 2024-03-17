@@ -28,6 +28,13 @@ const routes = [
   {
     path: "/",
     component: HomeComponent,
+    beforeEnter: () => {
+      const login = true;
+      if (login === false) {
+        alert("로그인 후 이용 가능합니다.");
+        return "/login";
+      }
+    },
   },
   {
     path: "/:anything(.*)",
